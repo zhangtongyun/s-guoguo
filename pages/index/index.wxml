@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
+<view>
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
@@ -9,5 +9,50 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view> -->
+   <!--首页，轮播图--> 
+ <swiper class="banner-swiper" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
+    <swiper-item class="swiper-item" wx:for="{{ banners }}" wx:for-index='idx' wx:if="{{idx<5}}" wx:key=".this">
+      <navigator url="../detail/detail?id={{ item.id }}">
+        <image src="http://localhost:7725{{ item.pic_url }}" class="slide-image"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+
+
+  <!--货架分类-->
+  <view class="shelf-nav">
+    <view class="shelf-nav-item" wx:for="{{ shelfNavList }}" wx:key="shelf">
+      <navigator url="../goods/goods?id={{ item.categoryId }}">
+        <image src="http://localhost:7725{{ item.imgUrl }}" class="shelf-nav-item__image"></image>
+        <text class="shelf-nav-item__text">{{ item.categoryName }}</text>
+      </navigator>
+    </view>
   </view>
+
+ <!--货架列表标题-->
+  <view class="shelf-header">
+    <view class="shelf-title">
+      <text class="shelf-title-en">{{ shelf.english_name }}</text>
+      <text class="shelf-title-cn">{{ shelf.name }}</text>
+    </view>
+  </view>
+
+   <!--商品列表-->
+  <view class="product-list">
+    <block wx:for="{{ productNewList }}" wx:key="goods">
+      <view class="product-card">
+        <navigator class="nav-product-card" url="../detail/detail?id={{ item.id }}">
+          <view>
+            <image class="product-cover" src="http://localhost:7725{{item.pic_url}}"></image>
+          </view>
+          <view>
+            <text class="product-title">{{ item.goods_name }}</text>
+            <text class="product-price">￥{{ item.market_price }}</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+
 </view>

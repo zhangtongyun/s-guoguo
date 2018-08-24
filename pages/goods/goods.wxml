@@ -1,0 +1,16 @@
+
+<view class="product-list">
+  <block wx:for="{{ goodsList }}" wx:key="goods">
+    <view class="product-card">
+        <navigator class="nav-product-card" url="../album/album?id={{ item.id }}">
+          <view>
+            <image class="product-cover" src="http://localhost:7725{{item.pic_url}}"></image>
+          </view>
+          <view>
+            <text class="product-title">{{ item.goods_name }}</text>
+            <text class="product-price">￥{{ item.market_price }}</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+</view>

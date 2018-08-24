@@ -1,0 +1,18 @@
+<!--pages/album/album.wxml-->
+
+
+<view class="product-list">
+  <block wx:for="{{ albumList }}" wx:key="album">
+    <view class="product-card">
+        <navigator class="nav-product-card" url="../albumDetail/albumDetail?id={{ item.id }}">
+          <view>
+            <image class="product-cover" src="http://localhost:7725{{item.picUrl}}"></image>
+          </view>
+          <view>
+            <text class="product-title">{{ item.albumName }}</text>
+            <text class="product-price">{{ item.albumDesc }}</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+</view>
