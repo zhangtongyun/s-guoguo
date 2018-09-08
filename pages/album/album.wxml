@@ -1,6 +1,5 @@
 <!--pages/album/album.wxml-->
 
-
 <view class="product-list">
   <block wx:for="{{ albumList }}" wx:key="album">
     <view class="product-card">

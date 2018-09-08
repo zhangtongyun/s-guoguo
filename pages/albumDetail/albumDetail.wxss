@@ -1,1 +1,47 @@
 /* pages/albumDetail/albumDetail.wxss */
+
+
+.product-card {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 26rpx;
+}
+
+.product-cover {
+  height: 350rpx;
+  width: 350rpx;
+}
+.product-title,
+.product-price
+{
+  width: 350rpx;
+  white-space:nowrap;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 30rpx;
+}
+
+.product-title {
+  font-size: 9pt;
+}
+.product-price {
+  font-size: 10pt;
+}
+
+.container {
+    box-sizing:border-box;
+	padding:20px;
+} 
+.previewimg{
+	float:left;
+	width:45%;
+	height:200px;
+	margin:2%;
+}
+.previewimg image{
+	width:100%;
+	height:100%;
+}

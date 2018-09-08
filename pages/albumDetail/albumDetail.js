@@ -5,16 +5,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    albumList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var ta = this;
+    wx.request({
+      url: 'http://localhost:7725/photoAlbumDetail/getAlbumDetail/' + options.id,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        ta.setData(
+          {
+            albumList: res.data.rows
+          }
+        )
+      }
+    })
   },
-
+imgYu:function(event){
+  var src = event.currentTarget.dataset.src;//获取data-src
+  var imgList = event.currentTarget.dataset.list;//获取data-list
+  var urls = [];
+  for (var i = 0; i < imgList.length; i++){
+    urls[i] = 'http://localhost:7725'+imgList[i].picUrl;
+  }
+  wx.previewImage({
+    current: src, // 当前显示图片的http链接
+    urls: urls // 需要预览的图片http链接列表
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
