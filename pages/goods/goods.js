@@ -1,6 +1,11 @@
+
+//获取应用实例
+const app = getApp()
+
 Page({
   data: {
-    goodsList: []
+    goodsList: [],
+    serviceUrl: app.globalData.serviceUrl
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
@@ -16,7 +21,6 @@ Page({
         page: 1,
         limit: 15,
         categoryId: options.id,
-        serviceUrl: app.globalData.serviceUrl
       },
       success: function (res) {
         ta.setData(

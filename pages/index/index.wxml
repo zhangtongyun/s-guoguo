@@ -13,7 +13,7 @@
    <!--首页，轮播图--> 
  <swiper class="banner-swiper" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
     <swiper-item class="swiper-item" wx:for="{{ banners }}" wx:for-index='idx' wx:if="{{idx<5}}" wx:key=".this">
-      <navigator url="../detail/detail?id={{ item.id }}">
+      <navigator url="../album/album?id={{ item.id }}">
         <image src="{{serviceUrl}}{{ item.pic_url }}" class="slide-image"></image>
       </navigator>
     </swiper-item>
@@ -42,7 +42,7 @@
   <view class="product-list">
     <block wx:for="{{ productNewList }}" wx:key="goods">
       <view class="product-card">
-        <navigator class="nav-product-card" url="../detail/detail?id={{ item.id }}">
+        <navigator class="nav-product-card" url="../album/album?id={{ item.id }}">
           <view>
             <image class="product-cover" src="{{serviceUrl}}{{item.pic_url}}"></image>
           </view>
