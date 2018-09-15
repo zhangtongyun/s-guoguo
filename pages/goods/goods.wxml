@@ -4,7 +4,7 @@
     <view class="product-card">
         <navigator class="nav-product-card" url="../album/album?id={{ item.id }}">
           <view>
-            <image class="product-cover" src="http://localhost:7725{{item.pic_url}}"></image>
+            <image class="product-cover" src="{{serviceUrl}}{{item.pic_url}}"></image>
           </view>
           <view>
             <text class="product-title">{{ item.goods_name }}</text>

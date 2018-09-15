@@ -15,7 +15,8 @@ Page({
       data: {
         page: 1,
         limit: 15,
-        categoryId: options.id
+        categoryId: options.id,
+        serviceUrl: app.globalData.serviceUrl
       },
       success: function (res) {
         ta.setData(

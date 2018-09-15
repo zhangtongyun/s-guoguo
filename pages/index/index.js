@@ -21,7 +21,8 @@ Page({
     autoplay: true,
     circular: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    serviceUrl: app.globalData.serviceUrl
   },
   // //事件处理函数
   // bindViewTap: function() {

@@ -3,7 +3,7 @@
   <block wx:for="{{ albumList }}" wx:key="album">
     <view class="product-card">
           <view>
-            <image class="product-cover" src="http://localhost:7725{{item.picUrl}}" bindtap="imgYu" data-list="{{albumList}}" data-src="http://localhost:7725{{item.picUrl}}"></image>
+            <image class="product-cover" src="{{serviceUrl}}{{item.picUrl}}" bindtap="imgYu" data-list="{{albumList}}" data-src="{{serviceUrl}}{{item.picUrl}}"></image>
           </view>
       </view>
     </block>

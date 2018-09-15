@@ -14,7 +14,7 @@
  <swiper class="banner-swiper" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
     <swiper-item class="swiper-item" wx:for="{{ banners }}" wx:for-index='idx' wx:if="{{idx<5}}" wx:key=".this">
       <navigator url="../detail/detail?id={{ item.id }}">
-        <image src="http://localhost:7725{{ item.pic_url }}" class="slide-image"></image>
+        <image src="{{serviceUrl}}{{ item.pic_url }}" class="slide-image"></image>
       </navigator>
     </swiper-item>
   </swiper>
@@ -24,7 +24,7 @@
   <view class="shelf-nav">
     <view class="shelf-nav-item" wx:for="{{ shelfNavList }}" wx:key="shelf">
       <navigator url="../goods/goods?id={{ item.categoryId }}">
-        <image src="http://localhost:7725{{ item.imgUrl }}" class="shelf-nav-item__image"></image>
+        <image src="{{serviceUrl}}{{ item.imgUrl }}" class="shelf-nav-item__image"></image>
         <text class="shelf-nav-item__text">{{ item.categoryName }}</text>
       </navigator>
     </view>
@@ -44,7 +44,7 @@
       <view class="product-card">
         <navigator class="nav-product-card" url="../detail/detail?id={{ item.id }}">
           <view>
-            <image class="product-cover" src="http://localhost:7725{{item.pic_url}}"></image>
+            <image class="product-cover" src="{{serviceUrl}}{{item.pic_url}}"></image>
           </view>
           <view>
             <text class="product-title">{{ item.goods_name }}</text>
